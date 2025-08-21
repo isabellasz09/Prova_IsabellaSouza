@@ -40,11 +40,14 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Usuario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
 </head>
 <body>
-    
+    <?php include 'menu.php'?>
+    <br>
     <h2>Lista de Usuarios</h2>
     <!-- FORMULARIO PARA BUSCAR USUARIO -->
      <form action="buscar_usuario.php" method="POST">
@@ -54,15 +57,16 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
      </form>
 
      <?php if(!empty($usuarios)):?>
-        <table border="1">
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Perfil</th>
-                <th>Ações</th>
+        <table border "1" class="table">
+        <thead>   
+        <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Perfil</th>
+                <th scope="col">Ações</th>
             </tr>
-
+            </thead>
             <?php foreach($usuarios as $usuario):?>
                 <tr>
                     <td><?=htmlspecialchars($usuario['id_usuario'])?></td>
@@ -76,6 +80,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </tr>
                 <?php endforeach; ?>
         </table>
+
         <?php else:?>
             <p>Nenhum usuario encontrado.</p>
         <?php endif;?>

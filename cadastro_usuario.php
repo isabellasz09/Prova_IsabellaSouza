@@ -44,7 +44,7 @@
     <script src="scripts.js"></script>
 </head>
 <body>
-    
+    <?php include 'menu.php'?>
     <h2>Cadastro Usuário</h2>
 
     <form action="cadastro_usuario.php" method="POST">
