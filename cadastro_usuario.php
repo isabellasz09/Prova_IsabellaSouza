@@ -41,8 +41,10 @@
     <title>Cadastro Usuário</title>
 
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
+    
     <h2>Cadastro Usuário</h2>
 
     <form action="cadastro_usuario.php" method="POST">
