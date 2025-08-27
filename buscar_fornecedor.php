@@ -3,7 +3,7 @@ session_start();
 require_once 'conexao.php';
 
 if($_SESSION['perfil']!=1 && $_SESSION['perfil']!=2){
-    echo "<script> alert('Acesso negado!');window.location.href='principal.php';</script>";
+    echo "<script> alert('Acesso negado!');window.location.href='index.php';</script>";
     exit();
 
 }
@@ -40,8 +40,8 @@ $fornecedor = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar fornecedor</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
 </head>
@@ -88,7 +88,7 @@ $fornecedor = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php else:?>
             <p>Nenhum fornecedor encontrado.</p>
         <?php endif;?>
-        <a href="principal.php">Voltar</a>
+        <a href="index.php">Voltar</a>
 </body>
 </html>
 

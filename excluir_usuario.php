@@ -5,7 +5,7 @@
 
     // VERIFICA SE O USUARIO TEM PERMISSAO DE adm
     if($_SESSION['perfil'] != 1) {
-        echo "<script> alert('Acesso Negado!'); window.location.href='principal.php'; </script>";
+        echo "<script> alert('Acesso Negado!'); window.location.href='index.php'; </script>";
         exit();
     }
 
@@ -83,6 +83,6 @@
         <p>Nenhum consagrado encontrado!</p>
     <?php endif; ?>
 
-    <a href="principal.php">Voltar</a>
+    <a href="index.php">Voltar</a>
 </body>
 </html>

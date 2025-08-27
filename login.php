@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
         }else{
             //REDIRECIONA PARA A PAGINA PRINCIPAL
-                header("Location: principal.php");
+                header("Location: index.php");
                 exit();
         }
         }else{

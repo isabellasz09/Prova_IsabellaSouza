@@ -33,7 +33,7 @@ $nome_perfil = $perfil["nome_perfil"];
 $permissoes = [
     1=>["Cadastrar"=>["cadastro_usuario.php","cadastro_perfil.php","cadastro_cliente.php","cadastro_produto.php","cadastro_fornecedor.php","cadastro_funcionario.php"],
         "Buscar"=>["buscar_usuario.php","buscar_perfil.php","buscar_cliente.php","buscar_produto.php","buscar_fornecedor.php","buscar_funcionario.php"],
-        "Alterar"=>["alterar_usuario.php","alterar_perfil.php","alterar_cliente.php","alterar_produto.php","alterar_fornecedoro.php","alterar_funcionario.php"],
+        "Alterar"=>["alterar_usuario.php","alterar_perfil.php","alterar_cliente.php","alterar_produto.php","alterar_fornecedor.php","alterar_funcionario.php"],
         "Excluir"=>["excluir_usuario.php","excluir_perfil.php","excluir_cliente.php","excluir_produto.php","excluir_fornecedor.php","excluir_funcionario.php"]],
    
     2=>["Cadastrar"=>["cadastro_cliente.php",],
@@ -59,8 +59,9 @@ $opcoes_menu = $permissoes[$id_perfil];
 ?>
     <nav>
         <ul class="menu">
+            <li><a class="telaPrincipal" href="index.php">Home</a></li>
             <?php foreach($opcoes_menu as $categoria=>$arquivos):?>
-                <li>
+            <li>
                 </li>
                 <li class="dropdown">
                     <a href="#"><?=$categoria?></a>
@@ -70,11 +71,12 @@ $opcoes_menu = $permissoes[$id_perfil];
                                 <a href="<?=$arquivo?>"><?= ucfirst(str_replace("_", " ",basename($arquivo,".php")))?></a>
                             </li>
                         <?php endforeach;?>
-                           
-                        </ul>
-                </li>
+                    </ul>
+                </li>   
             <?php endforeach;?>
+            <li><a class="logout" href="login.php">Logout</a></li>
         </ul>
+
     </nav>
 
 

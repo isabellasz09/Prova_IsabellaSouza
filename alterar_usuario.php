@@ -5,7 +5,7 @@ require_once 'conexao.php';
 
 //VERIFICA SE O USUARIO TEM PERMISSAO adm
 if($_SESSION['perfil'] != 1){
-    echo "<script> alert('Acesso negado!'); window.location.href='principal.php'; </script>";
+    echo "<script> alert('Acesso negado!'); window.location.href='index.php'; </script>";
     exit();
 }
 
@@ -89,6 +89,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 <button type="reset">Cancelar</button>
         </form>
         <?php endif; ?>
-        <a href="principal.php">Voltar</a>
+        <a href="index.php">Voltar</a>
 </body>
 </html>

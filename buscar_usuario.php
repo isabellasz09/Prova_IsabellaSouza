@@ -3,7 +3,7 @@ session_start();
 require_once 'conexao.php';
 
 if($_SESSION['perfil']!=1 && $_SESSION['perfil']!=2){
-    echo "<script> alert('Acesso negado!');window.location.href='principal.php';</script>";
+    echo "<script> alert('Acesso negado!');window.location.href='index.php';</script>";
     exit();
 
 }
@@ -84,7 +84,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php else:?>
             <p>Nenhum usuario encontrado.</p>
         <?php endif;?>
-        <a href="principal.php">Voltar</a>
+        <a href="index.php">Voltar</a>
 </body>
 </html>
 

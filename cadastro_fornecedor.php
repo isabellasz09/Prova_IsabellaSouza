@@ -72,6 +72,6 @@
         <button type="reset">Cancelar</button>
     </form>
 
-    <a href="principal.php">Voltar</a>
+    <a href="index.php">Voltar</a>
 </body>
 </html>
