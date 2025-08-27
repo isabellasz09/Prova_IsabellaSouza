@@ -17,18 +17,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST" && !empty($_POST['busca'])){
 
     //VERIFICA SE A BUSCA É UM NUMERO (id) OU UM NOME
     if(is_numeric($busca)){
-        $sql = "SELECT * FROM fornecedor WHERE id_fornecedor = :busca ORDER BY nome ASC";
+        $sql = "SELECT * FROM fornecedor WHERE id_fornecedor = :busca ORDER BY nome_fornecedor ASC";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':busca',$busca,PDO::PARAM_INT);
 
     }else{
-        $sql="SELECT * FROM fornecedor WHERE nome LIKE :busca_nome ORDER BY nome ASC";
-        $stmt=$pdo->prepare($sql);
-        $stmt->bindValue(':busca_nome', "$busca%",PDO::PARAM_STR);
+        $sql="SELECT * FROM fornecedor WHERE nome_fornecedor LIKE :busca_nome ORDER BY nome_fornecedor ASC";
+        $stmt = $pdo->prepare($sql);
+        $stmt ->bindValue(':busca_nome', "$busca%",PDO::PARAM_STR);
     }
 }else{
-        $sql="SELECT * FROM fornecedor ORDER BY nome ASC";
-        $stmt=$pdo->prepare($sql);
+        $sql="SELECT * FROM fornecedor ORDER BY nome_fornecedor ASC";
+        $stmt = $pdo->prepare($sql);
 }
 $stmt->execute();
 $fornecedor = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -46,7 +46,7 @@ $fornecedor = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="scripts.js"></script>
 </head>
 <body>
-    <?php include 'menu.php'?>
+<?php include 'menu.php';?> 
     <br>
     <h2>Lista de fornecedor</h2>
     <!-- FORMULARIO PARA BUSCAR fornecedor -->
@@ -66,19 +66,17 @@ $fornecedor = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <th scope="col">Telefone</th>
                 <th scope="col">Email</th>
                 <th scope="col">Nome Contato</th>
-                <th scope="col">Perfil</th>
                 <th scope="col">Ações</th>
             </tr>
             </thead>
             <?php foreach($fornecedor as $fornecedor):?>
                 <tr>
                     <td><?=htmlspecialchars($fornecedor['id_fornecedor'])?></td>
-                    <td><?=htmlspecialchars($fornecedor['nome'])?></td>
+                    <td><?=htmlspecialchars($fornecedor['nome_fornecedor'])?></td>
                     <td><?=htmlspecialchars($fornecedor['endereco'])?></td>
                     <td><?=htmlspecialchars($fornecedor['telefone'])?></td>
                     <td><?=htmlspecialchars($fornecedor['email'])?></td>
-                    <td><?=htmlspecialchars($fornecedor['nome_contato'])?></td>
-                    <td><?=htmlspecialchars($fornecedor['id_perfil'])?></td>
+                    <td><?=htmlspecialchars($fornecedor['contato'])?></td>
                     <td>
                         <a href="alterar_fornecedor.php?id=<?=htmlspecialchars($fornecedor['id_fornecedor'])?>">Alterar</a>
                         <a href="excluir_fornecedor.php?id=<?=htmlspecialchars($fornecedor['id_fornecedor'])?>"onclick="return confirm('tem certeza que deseja excluir este fornecedor')">Excluir</a>

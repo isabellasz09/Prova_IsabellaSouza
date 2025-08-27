@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <script src="scripts.js"></script>
 </head>
 <body>
-<?php include 'menu.php'?>
+<?php include 'menu.php';?>
 <br>
 <h2>Alterar Usuarios</h2>
     <!-- FORMULARIO PARA BUSCA USUARIO -->

@@ -50,7 +50,7 @@
     
 </head>
 <body>
-    <?php include 'menu.php'?>
+    <?php include 'menu.php';?>
     <br>
     <h2>Excluir Usuário</h2>
     <br>

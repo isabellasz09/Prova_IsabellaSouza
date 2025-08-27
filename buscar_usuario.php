@@ -46,7 +46,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="scripts.js"></script>
 </head>
 <body>
-    <?php include 'menu.php'?>
+    <?php include 'menu.php';?>
     <br>
     <h2>Lista de Usuarios</h2>
     <!-- FORMULARIO PARA BUSCAR USUARIO -->
