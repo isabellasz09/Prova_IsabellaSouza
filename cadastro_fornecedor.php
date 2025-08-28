@@ -46,6 +46,7 @@
 
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
+    <script src="mascaras.js"></script>
 </head>
 <body>
     <?php include 'menu.php';?>
